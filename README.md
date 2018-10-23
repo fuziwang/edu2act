@@ -4,5 +4,5 @@
 
 + `project1`：实现[todolist](https://fuziwang.github.io/project/todolist)功能
 
-+ `project2`：实现[edu2act](https://fuziwang.github.io/pooject/edu2act)功能
++ `project2`：实现[edu2act](https://fuziwang.github.io/project/edu2act)功能
 
