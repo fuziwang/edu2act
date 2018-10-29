@@ -1,0 +1,176 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.ado{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.swiper-container,.swiper-wrapper,.swiper-slide{
+	width: 100%;
+	height: 100%;
+}
+.bottom-pic{
+	position: relative;
+	top: -160px;
+}
+.bottom-pic img{
+	height: 500px;
+}
+.map-pic{
+	position: absolute;
+	top: 45%;
+	left: 10%;
+	width: 35%;
+}
+.text-abb{
+	position: absolute;
+	top: 62%;
+	left: 10%;
+	color: blue;
+	font-size: 20px;
+}
+.text-ab{
+	position: absolute;
+	top: 70%;
+	left: 10%;
+	color: blue;
+	font-size: 13px;
+	width: 60%;
+}
+
+.page1{
+	background: url(../imgs/bg1.webp) no-repeat center;
+	background-size: cover;
+}
+.rot img{
+	/*width:100%;
+	height: 137px; */
+	position:absolute;
+}
+.rot img:nth-of-type(1){
+	-webkit-transform-origin:center; 
+	-webkit-transform:rotateX(180deg);
+}
+.rot img:nth-of-type(2){
+	-webkit-transform-origin:center; 
+	-webkit-transform:rotateX(0deg);
+}
+
+.page4{
+	background: url(../img/page4_bj.jpg);
+}
+.page4_text{
+	width: 80%;
+	color: yellow;
+	margin-left: 8%;
+}
+.img_list{
+	/*position: relative;*/
+	/*width: 100%;*/
+	/*height: 50%;*/
+}
+.img_list div{
+	top: 35%;
+	position: absolute;
+}
+
+.page5_bann div{
+	position: absolute;
+	width: 100%;
+	height: auto;
+}
+.page5_nav{
+	width: 100%;
+	height: 50%;
+	position: absolute;
+	top: 42%;
+}
+.page5_nav>div{
+	width: 100%;
+	height: 15%;
+	
+
+}
+.page5_nav>div p{
+	color: white;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 20px;
+	padding-left: 13%;
+}
+.page5_nav img{
+	width: 5%;
+	height: 40%;
+	float: left;
+	margin-top: 4.3%;
+	padding-left: 5%;
+}
+.redbj{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0px; 
+	height: 100%; 
+	background: black;
+	-webkit-transition: 2s;
+}
+.page5_nav .redChange{
+	width: 45px;
+}
+@-webkit-keyframes leftPo{
+	0%{
+		left: -100%;
+	}
+	100%{
+		left: 0%;
+	}
+}
+.leftPo{
+	z-index: 100;
+	-webkit-animation: leftPo 2s;
+}
+.music{
+	width: 50px;
+	height: 50px;
+	background-image: url(../img/musicBtn.png);
+	background-size: 50px 50px; 
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 100;
+}
+.ai{
+	position: absolute;
+}
+.name{
+	width: 50%;
+	height: 30px;
+	border-radius: 15px;
+	left: 25%;
+	top: 33%;
+	text-align: center;
+	line-height: 30px;
+	background: #fff;
+	color: rgb(21, 7, 73);
+	font-size: 18px;
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px;
+}
+.txt{
+	font-size: 20px;
+	text-align: center;
+	top: 40%;
+	color: white;
+	width: 100%;
+}

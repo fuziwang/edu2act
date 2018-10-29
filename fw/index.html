@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>Frewen&WeiJia</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/default.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/swiper.animate.min.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+</head>
+<body>
+	<div class="music" id="music">
+	</div>
+	<!-- <audio id="aud" autoplay="autoplay" class="ado" src="renxi.mp3"></audio> -->
+	<embed id="aud" style="position:fixed;" src="renxi.mp3" autostart="true" playcount="true" loop="true" height="0" width="0"></embed>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">  
+	      	
+	    	<!-- 第一页 -->
+	        <div class="swiper-slide page1">
+	        	<div style="width:55%;bottom:17%;left:35%;" class="ani ai" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="0.5s">
+	        		<img src="imgs/person.webp" alt="">
+	        	</div>
+	        	<div style="width: 60%;top: 20px;left: 20%;" class="ani ai" swiper-animate-effect="rotateIn" swiper-animate-duration="1s" swiper-animate-delay="1s">
+	        		<span style="position: absolute;left:20px;top:15px;font-size: 14px;color: #fff;">2018年10月30日</span>
+	        		<img src="imgs/love.webp" alt="">	        		
+	        	</div>
+	        	<div class="ani ai name" swiper-animate-effect="bounceInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s">
+	        		My Heart Love
+	        	</div>
+	        	<div class="ani ai txt" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2.5s">
+	        		—— 付子旺 & 魏佳 ——
+	        	</div>
+	        </div>
+	        <!-- 第二页 -->
+	        <div class="swiper-slide page1">
+	        	<div id="mainDiv">
+					<div id="content">
+						<div id="loveHeart">
+							<canvas id="garden"></canvas>
+							<div id="words">
+								<div id="messages">亲爱的，这是我们相爱在一起的时光。
+									<div id="elapseClock"></div>
+								</div>
+								<div id="loveu">爱你直到永远<br/>
+									<div class="signature">-- Mr.Fu</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+	    </div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = 0;
+		var offsetY = 0;
+		var mySwiper = new Swiper ('.swiper-container', {
+		    direction: 'vertical',
+		    // loop: true,
+		    onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+			    swiperAnimateCache(swiper); //隐藏动画元素 
+			    swiperAnimate(swiper); //初始化完成开始动画
+			}, 
+			 onSlideChangeEnd: function(swiper){ 
+			    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+			    if(swiper.activeIndex==1){
+  					offsetX = $("#loveHeart").width() / 2;
+					offsetY = $("#loveHeart").height() / 2-55;
+					var together = new Date('2017-10-30');
+					//together.setFullYear(2013, 11, 15);
+					together.setHours(0);
+					together.setMinutes(0);
+					together.setSeconds(0);
+					together.setMilliseconds(0);
+
+					if (!document.createElement('canvas').getContext) {
+						var msg = document.createElement("div");
+						msg.id = "errorMsg";
+						msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+						document.body.appendChild(msg);
+						$("#code").css("display", "none")
+						$("#copyright").css("position", "absolute");
+						$("#copyright").css("bottom", "10px");
+						document.execCommand("stop");
+					} else {
+						setTimeout(function () {
+							startHeartAnimation();
+						}, 1000);
+
+						timeElapse(together);
+						setInterval(function () {
+							timeElapse(together);
+						}, 500);
+
+						adjustCodePosition();
+						// $("#code").typewriter();
+					}
+			    }
+			} 
+ 	 	});
+ 	 	// 音乐暂停按钮
+ 	 	window.onload = function(){
+	 	 	var mus = document.getElementById('music');
+	 	 	var aud = document.getElementById('aud');
+	 	 	var musFlag = true;
+	 	 	mus.onclick = function(){
+	 	 		if(musFlag){
+	 	 			aud.pause();
+	 	 			this.style.backgroundImage = 'url(img/musicBtnOff.png)';
+	 	 			musFlag = false;
+	 	 		}else{
+	 	 			aud.play();
+	 	 			this.style.backgroundImage = 'url(img/musicBtn.png)';
+	 	 			musFlag = true;
+	 	 		}
+	 	 	}
+ 	 	}
+	</script>
+</body>
+</html>
